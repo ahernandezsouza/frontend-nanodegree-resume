@@ -122,10 +122,10 @@ var projects = {
 var education = {
     "schools": [{
         "name": "Universidad Iberoamericana",
+        "degree": "BS Industrial Engineering",
+        "dates": "1990 - 1995",
         "location": "Mexico City",
-        "degree dates": "1990 - 1995",
-        "url": "http://ibero.mx/",
-        "majors": ["BS Industrial Engineering"]
+        "majors": ["Engineering"]
     }],
     "onlineCourses": [{
         "title": "Front-End Nanodegree Developer",
@@ -134,25 +134,37 @@ var education = {
         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
     }],
     "display":function(){
-
+    for (var school in education.schools){
+        $("#education").append(HTMLschoolStart);
+        var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
+        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+        var formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
+        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
+        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors);
+        $(".education-entry:last").append(formattedSchoolName+formattedSchoolDegree+formattedSchoolDates+formattedSchoolLocation+formattedSchoolMajor);
+    }
     }
 };
 
 
 // Applying Sections
 
-// Header
+//Display Header
 
 displayHeader();
 
-// Bio
+//Display Bio
 
 bio.display();
 
-// Work
+//Display Work
 
 work.display();
 
-//displayProjects();
+//Display Projects();
 
 projects.display();
+
+//Display Education
+
+education.display();
