@@ -22,11 +22,11 @@ function displaySkills(){
     }
 }
 
-function displayTopContacts(){
+function displayTopContacts(selector){
     var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
     var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
     var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
-    $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub);
+    $(selector).append(formattedMobile + formattedEmail + formattedGithub);
 }
 
 
@@ -46,7 +46,7 @@ var bio = {
         "github": "https://github.com/ahernandezsouza"
     },
     "display": function() {
-        displayTopContacts();
+        displayTopContacts("#topContacts");
         displayBio();
         displaySkills();
     }
@@ -168,3 +168,7 @@ projects.display();
 //Display Education
 
 education.display();
+
+//Display Footer Contacts
+
+displayTopContacts("#footerContacts");
