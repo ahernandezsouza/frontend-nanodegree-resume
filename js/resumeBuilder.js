@@ -134,15 +134,23 @@ var education = {
         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
     }],
     "display":function(){
-    for (var school in education.schools){
-        $("#education").append(HTMLschoolStart);
-        var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
-        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
-        var formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
-        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
-        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors);
-        $(".education-entry:last").append(formattedSchoolName+formattedSchoolDegree+formattedSchoolDates+formattedSchoolLocation+formattedSchoolMajor);
-    }
+        for (var school in education.schools){
+            $("#education").append(HTMLschoolStart);
+            var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
+            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+            var formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
+            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
+            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors);
+            $(".education-entry:last").append(formattedSchoolName+formattedSchoolDegree+formattedSchoolDates+formattedSchoolLocation+formattedSchoolMajor);
+        }
+        $("#education").append(HTMLonlineClasses).append(HTMLschoolStart);
+        for (var onlineCourse in education.schools){
+            var formattedOnlineCoursesTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[onlineCourse].title);
+            var formattedOnlineCoursesSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[onlineCourse].school);
+            var formattedOnlineCoursesDates = HTMLonlineDates.replace("%data%",education.onlineCourses[onlineCourse].dates);
+            var formattedOnlineCoursesURL = HTMLonlineURL.replace("%data%",education.onlineCourses[onlineCourse].url);
+            $(".education-entry:last").append(formattedOnlineCoursesTitle+formattedOnlineCoursesSchool+formattedOnlineCoursesDates+formattedOnlineCoursesURL);
+        }
     }
 };
 
