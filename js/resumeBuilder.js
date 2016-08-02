@@ -29,6 +29,9 @@ function displayTopContacts(selector){
     $(selector).append(formattedMobile + formattedEmail + formattedGithub);
 }
 
+function displayMap(){
+    $("#mapDiv").append(googleMap);
+}
 
 /*****************
 * Biography JSON *
@@ -43,7 +46,8 @@ var bio = {
     "contacts": {
         "mobile": "+52 1 55 3278 9283",
         "email": "ahernandezsouza@gmail.com",
-        "github": "https://github.com/ahernandezsouza"
+        "github": "https://github.com/ahernandezsouza",
+        "location": "Blvd Manuel Avila Camacho 109, Mexico City, Mexico"
     },
     "display": function() {
         displayTopContacts("#topContacts");
@@ -176,6 +180,10 @@ projects.display();
 //Display Education
 
 education.display();
+
+//Map
+
+displayMap();
 
 //Display Footer Contacts
 
