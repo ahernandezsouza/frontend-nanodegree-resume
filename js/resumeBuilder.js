@@ -15,10 +15,9 @@ function displayBio() {
 
 function displaySkills() {
     $("#header").append(HTMLskillsStart);
-    var skillsl = bio.skills.length;
-    for (var i = 0; i < skillsl; i++) {
-        $("#header").append(HTMLskills.replace("%data%", bio.skills[i]));
-    }
+    bio.skills.forEach(function(val) {
+        $("#header").append(HTMLskills.replace("%data%", val));
+    });
 }
 
 function displayTopContacts(selector) {
@@ -110,10 +109,9 @@ var projects = {
             var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
             var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
             $(".project-entry:last").append(formattedProjectTitle + formattedProjectDates + formattedProjectDescription /*+formattedProjectImage*/ );
-            var imagesl = projects.projects[project].images.length;
-            for (var i = 0; i < imagesl; i++) {
-                $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[project].images[i]));
-            }
+            projects.projects[project].images.forEach(function(val) {
+                $(".project-entry:last").append(HTMLprojectImage.replace("%data%", val));
+            });
         }
     }
 };
