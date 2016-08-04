@@ -1,0 +1,20 @@
+{
+  "name": "frontend-nanodegree-resume",
+  "homepage": "https://github.com/ahernandezsouza/frontend-nanodegree-resume",
+  "authors": [
+    "Antonio Hernandez Souza <ahernandezsouza@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.6.1"
+  }
+}

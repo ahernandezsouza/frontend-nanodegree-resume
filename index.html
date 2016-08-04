@@ -1,26 +1,14 @@
 <!DOCTYPE html>
 
 <head>
-    <!-- This tells the browser how to read the document. -->
     <meta charset="utf-8">
-
-    <!-- Tells the browser what the title of this page should be. -->
-    <title>Resume</title>
-
-    <!-- Load the page styles. -->
+    <title>Antonio Hernández - Developer Resume</title>
     <link href="css/style.css" rel="stylesheet">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-    <!-- More on helper.js in the class -->
     <script src="js/helper.js"></script>
-
-    <!--
-  Added an interactive Google Map to your resume!
-  -->
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD0mfFcxK_9PNodsnLnABK8k95o8lKFQ54"></script>
-
     <meta name="viewport" content="width=device-width">
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 </head>
 
 <body>
@@ -54,11 +42,7 @@
   -->
     <script src="js/resumeBuilder.js"></script>
 
-
-    <!--
-  If you have not made any changes to a section of the resume, then that part does not show up.
-  -->
-
+<!--We are beyond this ;)
     <script type="text/javascript">
         if (document.getElementsByClassName('flex-item').length === 0) {
             document.getElementById('topContacts').style.display = 'none';
@@ -82,6 +66,7 @@
             document.getElementById('mapDiv').style.display = 'none';
         }
     </script>
+-->
 </body>
 
 </html>
