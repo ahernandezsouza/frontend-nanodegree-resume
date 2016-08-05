@@ -2,21 +2,22 @@
  * FUNCTIONS *
  ************/
 function displayHeader() {
-    var formattedName = HTMLheaderName.replace("%data%", "Antonio Hernández");
+    var formattedName = HTMLheaderName.replace("%data%", "Antonio Hernández ");
     var formattedRole = HTMLheaderRole.replace("%data%", "Front End Developer");
-    $("#header").prepend(formattedName + formattedRole);
+    $("#header-top").prepend(formattedName + formattedRole);
 }
 
 function displayBio() {
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedBioPic + formattedWelcomeMsg);
+    $("#paper-header").attr("image", bio.biopic);
+    $("#paper-header").attr("heading", bio.welcomeMessage);
 }
 
 function displaySkills() {
-    $("#header").append(HTMLskillsStart);
+    $("#header-skills").append(HTMLskillsStart);
     bio.skills.forEach(function(val) {
-        $("#header").append(HTMLskills.replace("%data%", val));
+        $("#header-skills").append(HTMLskills.replace("%data%", val));
     });
 }
 
@@ -39,7 +40,7 @@ function displayMap() {
 var bio = {
     "name": "Antonio Hernández Souza",
     "role": "Application Developer",
-    "welcomeMessage": "(Acquia Certified Drupal Site-Builder)",
+    "welcomeMessage": "Acquia Certified Drupal Site-Builder",
     "skills": ["HTML/CSS", "Javascript", "Responsive Design", "Drupal CMS"],
     "biopic": "images/biopic.jpg",
     "contacts": {
