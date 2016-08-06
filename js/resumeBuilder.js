@@ -94,11 +94,13 @@ var work = {
 var projects = {
     "projects": [{
         "title": "Real Simple Energy",
+        "code": "realsimpleenergy",
         "dates": "2015",
         "description": "Wordpress-based solution, using Gravity Forms to power the first phase of Real Simple Energy, helping contact an measure prospective clients for one-on-one energy plan analysis and recommendation.",
         "images": ["images/realsimpleenergy_small.png", "images/realsimpleenergy_small.png"]
     }, {
         "title": "Superate y Triunfa",
+        "code": "superateytriunfa",
         "dates": "2012",
         "description": "We partnered with Techstudios and the Tec of Monterrey to develop a online teaching site focused in combining a wealth of resources aimed at the recently arrived Latino population in the U.S. This Drupal-based site uses a multi domain presence to partner with Univision in a similar effort, delivering its capabilities to a much wider audience.",
         "images": ["images/syt_small.png"]
@@ -109,9 +111,13 @@ var projects = {
             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
             var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
             var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-            $(".project-entry:last").append(formattedProjectTitle + formattedProjectDates + formattedProjectDescription /*+formattedProjectImage*/ );
+            var formattedProjectButton = HTMLprojectButton.replace("%data%", projects.projects[project].code);
+            var formattedProjectModal = HTMLprojectModal.replace("%data%", projects.projects[project].code);
+            $(".project-entry:last").attr("heading", projects.projects[project].title+" - "+projects.projects[project].dates);
+            $(".project-entry:last").append(formattedProjectDescription+formattedProjectButton);
+            $("#projects").append(formattedProjectModal);
             projects.projects[project].images.forEach(function(val) {
-                $(".project-entry:last").append(HTMLprojectImage.replace("%data%", val));
+                $("paper-dialog#"+projects.projects[project].code+" div.images").append(HTMLprojectImage.replace("%data%", val));
             });
         }
     }

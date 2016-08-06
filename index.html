@@ -19,10 +19,14 @@
     <link rel="import" href="bower_components/paper-menu/paper-menu.html">
     <link rel="import" href="bower_components/paper-item/paper-item.html">
     <link rel="import" href="bower_components/paper-card/paper-card.html">
+    <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
     <link rel="import" href="bower_components/iron-icons/iron-icons.html">
     <link rel="import" href="bower_components/iron-icon/iron-icon.html">
     <link rel="import" href="bower_components/iron-iconset/iron-iconset.html">
     <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+    <link rel="import" href="bower_components/neon-animation/animations/scale-up-animation.html">
+    <link rel="import" href="bower_components/neon-animation/animations/fade-out-animation.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
 </head>
 
 <body class="vertical layout" style="background-color: lightgrey">
@@ -34,10 +38,18 @@
                     <div>Resume Sections</div>
                 </paper-toolbar>
                 <paper-menu>
-                    <paper-item>Experience</paper-item>
-                    <paper-item>Projects</paper-item>
-                    <paper-item>Education</paper-item>
-                    <paper-item>Where I Lived and Worked</paper-item>
+                    <a href="#paper-workExperience" tabindex="-1">
+                        <paper-item>Experience</paper-item>
+                    </a>
+                    <a href="#paper-projects" tabindex="-1">
+                        <paper-item>Projects</paper-item>
+                    </a>
+                    <a href="#paper-education" tabindex="-1">
+                        <paper-item>Education</paper-item>
+                    </a>
+                    <a href="#paper-map" tabindex="-1">
+                        <paper-item>Where I Lived and Worked</paper-item>
+                    </a>
                 </paper-menu>
             </paper-header-panel>
             <paper-header-panel main>
@@ -46,49 +58,55 @@
                     <div id="header-top"></div>
                 </paper-toolbar>
                 <paper-material id="content">
-                        <div id="main">
-                            <paper-card id="paper-topheader">
-                                <div class="horizontal">
-                                    <paper-card id="paper-header">
-                                    </paper-card>
-                                    <paper-card id="paper-header">
-                                        <div class="card-content">
-                                                <div id="header">
-                                                    <ul id="topContacts" class="flex-box"></ul>
-                                                </div>
+                    <paper-card id="paper-topheader" class="top">
+                        <div class="horizontal">
+                            <paper-card id="paper-header">
+                            </paper-card>
+                            <paper-card id="paper-header">
+                                <div class="card-content">
+                                        <div id="header">
+                                            <ul id="topContacts" class="flex-box"></ul>
                                         </div>
-                                    </paper-card>
                                 </div>
                             </paper-card>
-                            <paper-card id="paper-workExperience" heading="Work Experience">
-                                <div class="card-content">
-                                        <div id="workExperience" class="gray"></div>
-                                </div>
-                            </paper-card>
-                            <paper-card id="paper-projects" heading="Projects">
-                                <div class="card-content">
-                                        <div id="projects"></div>
-                                </div>
-                            </paper-card>
-                            <paper-card id="paper-education" heading="Education">
-                                <div class="card-content">
-                                        <div id="education" class="gray"></div>
-                                </div>
-                            </paper-card>
-                            <paper-card id="paper-map" heading="Where I've Lived and Worked">
-                                <div class="card-content">
-                                    <google-map latitude="37.77493" longitude="-122.41942" fit-to-markers>
-                                        <google-map-marker latitude="37.779" longitude="-122.3892" draggable="true" title="Go Giants!"></google-map-marker>
-                                        <google-map-marker latitude="37.777" longitude="-122.38911"></google-map-marker>
-                                    </google-map>
-                                        <div id="mapDiv"></div>
-                                </div>
-                            </paper-card>
-                                        <div id="lets-connect" class="dark-gray">
-                                            <h2 class="orange center-text">Let's Connect</h2>
-                                            <ul id="footerContacts" class="flex-box"></ul>
-                                        </div>
                         </div>
+                    </paper-card>
+                    <paper-card id="paper-workExperience" heading="Work Experience" class="top" elevation="4">
+                        <hr>
+                        <div class="card-content">
+                                <div id="workExperience"></div>
+                        </div>
+                    </paper-card>
+                    <paper-card id="paper-projects" heading="Projects" class="top">
+                        <hr>
+                        <div class="card-content">
+                                <div id="projects"></div>
+                        </div>
+                    </paper-card>
+                    <paper-card id="paper-education" heading="Education" class="top">
+                        <hr>
+                        <div class="card-content">
+                                <div id="education" class="gray"></div>
+                        </div>
+                    </paper-card>
+                    <paper-card id="paper-map" heading="Where I've Lived and Worked" class="top">
+                        <hr>
+                        <div class="card-content">
+                                <div id="mapDiv"></div>
+                        </div>
+                    </paper-card>
+                    <paper-card id="paper-map" heading="Let's Connect" class="top">
+                                <div id="lets-connect" class="dark-gray">
+                                    <ul id="footerContacts" class="flex-box"></ul>
+                                </div>
+                    </paper-card>
+                    <paper-button raised onclick="dialog.open()">plain dialog</paper-button>
+                    <paper-dialog entry-animation="scale-up-animation"
+                                  exit-animation="fade-out-animation"
+                                  id="dialog">
+                        <h2>Header</h2>
+                        <div>Dialog body</div>
+                    </paper-dialog>
                 </paper-material>
             </paper-header-panel>
     </paper-drawer-panel>

@@ -19,18 +19,20 @@ var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
-var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
+var HTMLworkStart = '<paper-material class="work-entry" elevation="3"></paper-material>';
+var HTMLworkEmployer = '<a href="#"><iron-icon icon="work" class="big"></iron-icon> %data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
+var HTMLprojectStart = '<paper-card class="project-entry" elevation="4"></paper-card>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectDescription = '<hr><div class="card-content"><p>%data%</p></div>';
 var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectButton = '<div class="card-actions"><paper-button class="dialog-btn" raised onclick="%data%.open()">See More</paper-button></div>';
+var HTMLprojectModal = '<paper-dialog entry-animation="scale-up-animation" exit-animation="fade-out-animation" id="%data%"><div class="images"></div><div class="buttons"><paper-button dialog-dismiss>Close</paper-button></paper-dialog>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';

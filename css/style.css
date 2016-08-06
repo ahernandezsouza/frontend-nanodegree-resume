@@ -1,5 +1,7 @@
 paper-card{
   background-color: #2C2F2F !important;
+}
+paper-card.top{
   margin-top:10px;
   margin-left:10%;
   margin-right:10%;
@@ -17,6 +19,75 @@ paper-card{
   display: inline;
 }
 
+paper-card.project-entry{
+  background-color: #fff !important;
+  color:#000 !important;
+  margin-top:10px;
+}
+
+
 .paper-card-0 .header.paper-card .title-text.paper-card{
   color: #fff !important;
+}
+
+paper-card.project-entry .header.paper-card .title-text.paper-card{
+  color: #000 !important;
+}
+
+#map {
+  display: block;
+  height: 100%;
+  margin: 0 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: left;
+}
+
+a {
+  color: #1199c3;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: right;
+}
+
+.work-entry{
+  padding: 5px;
+}
+
+.dialog-btn{
+  background-color: grey;
+  margin:10px;
+  float: right;
+}
+
+.images img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
