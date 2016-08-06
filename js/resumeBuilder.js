@@ -44,10 +44,10 @@ var bio = {
     "skills": ["HTML/CSS", "Javascript", "Responsive Design", "Drupal CMS"],
     "biopic": "images/biopic.jpg",
     "contacts": {
-        "mobile": "+52 1 55 3278 9283",
-        "email": "ahernandezsouza@gmail.com",
-        "github": "https://github.com/ahernandezsouza",
-        "location": "Miguel Hidalgo, Mexico City, Mexico"
+        "mobile": " +52 1 55 3278 9283",
+        "email": " ahernandezsouza@gmail.com",
+        "github": " https://github.com/ahernandezsouza",
+        "location": " Miguel Hidalgo, Mexico City, Mexico"
     },
     "display": function() {
         displayTopContacts("#topContacts");
