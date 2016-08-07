@@ -2,32 +2,7 @@
  * FUNCTIONS *
  ************/
 function displayHeader() {
-    var formattedName = HTMLheaderName.replace("%data%", "Antonio Hernández ");
-    var formattedRole = HTMLheaderRole.replace("%data%", "Front End Developer");
-    $("#header-top").prepend(formattedName + formattedRole);
 }
-
-/*function displayBio() {
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-    var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#paper-header").attr("image", bio.biopic);
-    $("#paper-header").attr("heading", bio.welcomeMessage);
-}*/
-
-/*function displaySkills() {
-    $("#header-skills").append(HTMLskillsStart);
-    bio.skills.forEach(function(skill) {
-        $("#header-skills").append(HTMLskills.replace("%data%", skill));
-    });
-}*/
-
-/*function displayTopContacts(selector) {
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $(selector).append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
-}*/
 
 function displayMap() {
     $("#mapDiv").append(googleMap);
@@ -50,6 +25,9 @@ var bio = {
     "skills": ["HTML/CSS", "Javascript", "Responsive Design", "Drupal CMS"],
     "biopic": "images/biopic.jpg",
     "display": function() {
+        var formattedName = HTMLheaderName.replace("%data%", "Antonio Hernández ");
+        var formattedRole = HTMLheaderRole.replace("%data%", "Front End Developer");
+        $("#header-top").prepend(formattedName + formattedRole);//Toolbar
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);//Header
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
         $("#paper-header").attr("image", bio.biopic);
@@ -63,6 +41,7 @@ var bio = {
         var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
         $("#topContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
+        $("#footerContacts").append(formattedMobile + formattedEmail + formattedGithub + formattedLocation);
     }
 };
 
@@ -176,12 +155,6 @@ var education = {
 
 
 // Applying Sections
-
-//Display Header
-
-displayHeader();
-
-//Display Bio
 
 bio.display();
 
